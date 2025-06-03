@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Cheat GTA V PC Lengkap</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a202c; /* bg-gray-900 */
+            color: #e2e8f0; /* text-gray-200 */
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .cheat-table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            border-radius: 8px;
+            overflow: hidden; /* To make border-radius work on table */
+        }
+        .cheat-table th, .cheat-table td {
+            border: 1px solid #2d3748; /* border-gray-700 */
+            padding: 12px;
+            text-align: left;
+        }
+        .cheat-table th {
+            background-color: #2d3748; /* bg-gray-700 */
+            color: #a0aec0; /* text-gray-400 */
+            font-weight: 600;
+        }
+        .cheat-table td {
+            background-color: #252d3a; /* Slightly lighter than bg-gray-800 for contrast */
+        }
+        .cheat-table tr:hover td {
+            background-color: #374151; /* bg-gray-600 */
+        }
+        .cheat-code {
+            font-weight: bold;
+            color: #63b3ed; /* text-blue-400 */
+            cursor: pointer;
+        }
+        .cheat-code:hover {
+            color: #90cdf4; /* text-blue-300 */
+        }
+        .category-title {
+            font-size: 1.75rem; /* text-2xl */
+            font-weight: 700;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #cbd5e0; /* text-gray-300 */
+            border-bottom: 2px solid #4a5568; /* border-gray-600 */
+            padding-bottom: 8px;
+        }
+        .search-input {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 25px;
+            border-radius: 6px;
+            background-color: #2d3748; /* bg-gray-700 */
+            color: #e2e8f0; /* text-gray-200 */
+            border: 1px solid #4a5568; /* border-gray-600 */
+            font-size: 1rem;
+        }
+        .search-input:focus {
+            outline: none;
+            border-color: #63b3ed; /* border-blue-400 */
+            box-shadow: 0 0 0 3px rgba(99, 179, 237, 0.5);
+        }
+        .copy-feedback {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #2d3748; /* bg-gray-700 */
+            color: #90cdf4; /* text-blue-300 */
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .copy-feedback.show {
+            opacity: 1;
+        }
+        .how-to-enter {
+            font-size: 0.9rem;
+            color: #a0aec0; /* text-gray-400 */
+        }
+        /* Responsive table */
+        @media screen and (max-width: 768px) {
+            .cheat-table thead {
+                display: none; /* Hide table headers on small screens */
+            }
+            .cheat-table, .cheat-table tbody, .cheat-table tr, .cheat-table td {
+                display: block;
+                width: 100%;
+            }
+            .cheat-table tr {
+                margin-bottom: 15px;
+                border: 1px solid #2d3748;
+                border-radius: 8px;
+            }
+            .cheat-table td {
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+                border: none; /* Remove individual cell borders */
+                border-bottom: 1px solid #2d3748; /* Add bottom border for separation */
+            }
+            .cheat-table td:last-child {
+                border-bottom: none; /* Remove bottom border for the last cell in a block */
+            }
+            .cheat-table td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                width: calc(50% - 20px);
+                padding-right: 10px;
+                white-space: nowrap;
+                text-align: left;
+                font-weight: bold;
+                color: #a0aec0; /* text-gray-400 */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="text-center py-8">
+            <h1 class="text-4xl font-bold text-white">Daftar Cheat GTA V PC Lengkap</h1>
+            <p class="text-lg text-gray-400 mt-2">Gunakan cheat dengan bijak! Aktifkan melalui konsol (tombol `~`) atau dial di HP.</p>
+        </header>
+
+        <input type="text" id="searchInput" class="search-input" placeholder="Cari cheat berdasarkan efek atau kode...">
+
+        <div id="cheatsContainer">
+            </div>
+
+        <div id="copyFeedback" class="copy-feedback">Kode disalin!</div>
+    </div>
+
+    <footer class="text-center py-6 mt-8">
+        <p class="text-sm text-gray-500">&copy; <span id="currentYear"></span> Aplikasi Cheat GTA V. Dibuat untuk tujuan informasi.</p>
+    </footer>
+
+    <script>
+        // Data cheat GTA V PC
+        // Cara memasukkan:
+        // 1. Konsol: Tekan tombol `~` (tilde, di sebelah kiri angka 1), ketik kode, lalu Enter.
+        // 2. HP: Buka HP karakter, masuk ke Kontak, tekan Spasi (atau tombol untuk memunculkan dialpad), masukkan nomor cheat, lalu tekan Spasi (atau tombol panggil).
+        const cheatsData = [
+            {
+                category: "Pemain & Kemampuan",
+                cheats: [
+                    { effect: "Kebal (Invincible) selama 5 menit", code: "PAINKILLER", phone: "1-999-724-654-5537", consoleOnly: false },
+                    { effect: "Darah dan Armor Penuh", code: "TURTLE", phone: "1-999-887-853", consoleOnly: false },
+                    { effect: "Lari Cepat", code: "CATCHME", phone: "1-999-228-2463", consoleOnly: false },
+                    { effect: "Lompat Super", code: "HOPTOIT", phone: "1-999-467-86-48", consoleOnly: false },
+                    { effect: "Isi Ulang Kemampuan Spesial", code: "POWERUP", phone: "1-999-769-3787", consoleOnly: false },
+                    { effect: "Mode Mabuk", code: "LIQUOR", phone: "1-999-547-861", consoleOnly: false },
+                    { effect: "Pukulan Super (Meledak)", code: "HOTHANDS", phone: "1-999-4684-2637", consoleOnly: false },
+                    { effect: "Peluru Meledak", code: "HIGHEX", phone: "1-999-444-439", consoleOnly: false },
+                    { effect: "Peluru Api", code: "INCENDIARY", phone: "1-999-462-363-4279", consoleOnly: false },
+                    { effect: "Bidikan Lambat (Slow Motion Aim)", code: "DEADEYE", phone: "1-999-332-3393", consoleOnly: false }, // Ulangi untuk meningkatkan efek, ke-4x menonaktifkan
+                    { effect: "Terjun dari Langit (Skyfall)", code: "SKYFALL", phone: "1-999-759-3255", consoleOnly: false }
+                ]
+            },
+            {
+                category: "Senjata & Amunisi",
+                cheats: [
+                    { effect: "Dapatkan Semua Senjata & Amunisi", code: "TOOLUP", phone: "1-999-8665-87", consoleOnly: false },
+                ]
+            },
+            {
+                category: "Kendaraan",
+                cheats: [
+                    { effect: "Mobil Comet", code: "COMET", phone: "1-999-266-38", consoleOnly: false },
+                    { effect: "Mobil Rapid GT", code: "RAPIDGT", phone: "1-999-727-4348", consoleOnly: false },
+                    { effect: "Mobil Limosin (Stretch Limo)", code: "VINEWOOD", phone: "1-999-846-39663", consoleOnly: false },
+                    { effect: "Truk Sampah (Trashmaster)", code: "TRASHED", phone: "1-999-872-7433", consoleOnly: false },
+                    { effect: "Mobil Golf (Caddy)", code: "HOLEIN1", phone: "1-999-4653-46-1", consoleOnly: false },
+                    { effect: "Sepeda BMX", code: "BANDIT", phone: "1-999-226-348", consoleOnly: false },
+                    { effect: "Motor Sanchez (Dirt Bike)", code: "OFFROAD", phone: "1-999-633-7623", consoleOnly: false },
+                    { effect: "Motor PCJ-600 (Sport Bike)", code: "ROCKET", phone: "1-999-762-538", consoleOnly: false },
+                    { effect: "Helikopter Buzzard (Attack Heli)", code: "BUZZOFF", phone: "1-999-289-9633", consoleOnly: false },
+                    { effect: "Pesawat Stunt Plane", code: "BARNSTORM", phone: "1-999-2276-78676", consoleOnly: false },
+                    { effect: "Pesawat Duster (Crop Duster)", code: "FLYSPRAY", phone: "1-999-359-77729", consoleOnly: false },
+                    { effect: "Mobil Duke O'Death", code: "DEATHCAR", phone: "1-999-3328-4227", consoleOnly: true, note: "Hanya setelah menyelesaikan Duel Acak." }, // PC specific, console only input
+                    { effect: "Kapal Selam Kraken", code: "BUBBLES", phone: "1-999-282-2537", consoleOnly: true, note: "Hanya setelah menyelesaikan Wildlife Photography Challenge." }, // PC specific, console only input
+                    { effect: "Pesawat Dodo (Seaplane)", code: "EXTINCT", phone: "1-999-398-4628", consoleOnly: true, note: "Hanya setelah menyelesaikan Duel Acak." } // PC specific, console only input
+                ]
+            },
+            {
+                category: "Dunia & Cuaca",
+                cheats: [
+                    { effect: "Ubah Cuaca", code: "MAKEITRAIN", phone: "1-999-625-348-7246", consoleOnly: false }, // Siklus cuaca
+                    { effect: "Gravitasi Bulan (Low Gravity)", code: "FLOATER", phone: "1-999-356-2837", consoleOnly: false },
+                    { effect: "Mobil Licin (Slippery Cars)", code: "SNOWDAY", phone: "1-999-766-9329", consoleOnly: false },
+                    { effect: "Mode Lambat (Slow Motion)", code: "SLOWMO", phone: "1-999-756-966", consoleOnly: false } // Ulangi untuk meningkatkan efek, ke-4x menonaktifkan
+                ]
+            },
+            {
+                category: "Level Wanted",
+                cheats: [
+                    { effect: "Naikkan Level Wanted", code: "FUGITIVE", phone: "1-999-3844-8483", consoleOnly: false },
+                    { effect: "Turunkan Level Wanted", code: "LAWYERUP", phone: "1-999-5299-3787", consoleOnly: false }
+                ]
+            }
+        ];
+
+        const cheatsContainer = document.getElementById('cheatsContainer');
+        const searchInput = document.getElementById('searchInput');
+        const copyFeedback = document.getElementById('copyFeedback');
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        function renderCheats(filter = '') {
+            cheatsContainer.innerHTML = ''; // Bersihkan kontainer
+            const lowerCaseFilter = filter.toLowerCase();
+
+            cheatsData.forEach(category => {
+                const filteredCheats = category.cheats.filter(cheat => 
+                    cheat.effect.toLowerCase().includes(lowerCaseFilter) || 
+                    cheat.code.toLowerCase().includes(lowerCaseFilter) ||
+                    (cheat.phone && cheat.phone.toLowerCase().includes(lowerCaseFilter))
+                );
+
+                if (filteredCheats.length > 0) {
+                    const categoryTitle = document.createElement('h2');
+                    categoryTitle.className = 'category-title';
+                    categoryTitle.textContent = category.category;
+                    cheatsContainer.appendChild(categoryTitle);
+
+                    const table = document.createElement('table');
+                    table.className = 'cheat-table';
+                    
+                    const thead = document.createElement('thead');
+                    thead.innerHTML = `
+                        <tr>
+                            <th>Efek</th>
+                            <th>Kode Konsol</th>
+                            <th>Kode HP</th>
+                            <th>Cara Input</th>
+                        </tr>
+                    `;
+                    table.appendChild(thead);
+
+                    const tbody = document.createElement('tbody');
+                    filteredCheats.forEach(cheat => {
+                        const row = tbody.insertRow();
+                        
+                        const cellEffect = row.insertCell();
+                        cellEffect.textContent = cheat.effect;
+                        cellEffect.setAttribute('data-label', 'Efek');
+
+                        const cellCode = row.insertCell();
+                        cellCode.className = 'cheat-code';
+                        cellCode.textContent = cheat.code;
+                        cellCode.title = 'Klik untuk menyalin kode konsol';
+                        cellCode.setAttribute('data-label', 'Kode Konsol');
+                        cellCode.onclick = () => copyToClipboard(cheat.code, 'konsol');
+
+                        const cellPhone = row.insertCell();
+                        if (cheat.phone) {
+                            cellPhone.className = 'cheat-code';
+                            cellPhone.textContent = cheat.phone;
+                            cellPhone.title = 'Klik untuk menyalin kode HP';
+                            cellPhone.onclick = () => copyToClipboard(cheat.phone, 'HP');
+                        } else {
+                            cellPhone.textContent = '-';
+                        }
+                        cellPhone.setAttribute('data-label', 'Kode HP');
+                        
+                        const cellHowTo = row.insertCell();
+                        let howToText = "Konsol (`~`)";
+                        if (cheat.phone && !cheat.consoleOnly) {
+                            howToText += " / HP";
+                        } else if (cheat.consoleOnly) {
+                             howToText = "Hanya Konsol (`~`)";
+                        }
+                        if (cheat.note) {
+                            howToText += ` (${cheat.note})`;
+                        }
+                        cellHowTo.innerHTML = `<span class="how-to-enter">${howToText}</span>`;
+                        cellHowTo.setAttribute('data-label', 'Cara Input');
+                    });
+                    table.appendChild(tbody);
+                    cheatsContainer.appendChild(table);
+                }
+            });
+        }
+
+        function copyToClipboard(text, type) {
+            // Menggunakan textarea sementara untuk menyalin
+            const el = document.createElement('textarea');
+            el.value = text;
+            document.body.appendChild(el);
+            el.select();
+            try {
+                document.execCommand('copy');
+                copyFeedback.textContent = `Kode ${type} "${text}" disalin!`;
+            } catch (err) {
+                copyFeedback.textContent = `Gagal menyalin kode.`;
+                console.error('Fallback: Oops, unable to copy', err);
+            }
+            document.body.removeChild(el);
+            
+            // Tampilkan feedback
+            copyFeedback.classList.add('show');
+            setTimeout(() => {
+                copyFeedback.classList.remove('show');
+            }, 2000);
+        }
+
+        searchInput.addEventListener('input', (e) => {
+            renderCheats(e.target.value);
+        });
+
+        // Render cheat awal saat halaman dimuat
+        renderCheats();
+    </script>
+</body>
+</html>
